@@ -86,7 +86,7 @@ python manage.py shell
 
 >>> Post.objects.all()
 
->>> post_2 = Post( title ='blog 2' , content='My second post', author_id = user_id )
+>>> post_2 = Post( title ='blog 2' , content='My second post', author_id = user.id )
 >>> post_2.save()
 
 >>> post = Post.objects.first()
@@ -193,3 +193,12 @@ we make relationship  between User and Profile Model annd regiater it with admi 
 
 
 ***********************************
+
+create user in cmd ---------- https://www.codegrepper.com/code-examples/python/django+add+user+command+line
+
+>>> import django.contrib.auth
+>>> User = django.contrib.auth.get_user_model()
+>>> user = User.objects.create_user('username', password='userpassword')
+>>> user.is_superuser = False
+>>> user.is_staff = False
+>>> user.save()
